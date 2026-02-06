@@ -1,12 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+
+
 body {
     display: flex;
-    min-height: 200vh;
+    min-height: 300vh;
     flex-direction: column;
     background-color: #0f0f11;
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
 }
 
 .navigation {
@@ -17,7 +27,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(23, 23, 23, 0.85);;
+    background-color: rgba(23, 23, 23, 0.85);
     color: white;
 
     backdrop-filter: blur(10px);
@@ -27,36 +37,121 @@ body {
     width: 35px;
     height: 35px;
     transition: transform 0.3s ease;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .menuIcon {
     fill: white;
+    transition: transform 0.2s ease;
+}
+
+.menuIcon:hover {
+    transform: rotate(90deg);
 }
 
 .menu:hover {
-    transform:scale(1.1);
+    transform: scale(1.1);
+}
+
+.welcomeLanding {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
 }
 
 .linkNav {
     display: flex;
     flex-direction: row;
     gap: 4em;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    height: 100%;
 }
 
 .linkNav a {
+    display: inline-block;
     color: white;
     text-decoration: none;
     font-weight: 500;
 
-    transition: text-shadow 0.3s ease;
+    transition: text-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .linkNav a:hover {
     text-shadow: rgba(255, 255, 255, 0.3) 0 0 10px;
+    transform: scale(1.1);
 }
 
 .logoIcon {
     width: 40px;
     height: 40px;
     fill: white;
+}
+
+.welcomeTitle {
+    font-size: 10em;
+    color: rgb(120, 255, 120);
+    text-align: center;
+    font-weight: 700;
+    text-shadow: rgb(120, 255, 120, 0.25) 0 0 20px;
+}
+
+.welcomeSubtitle {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    margin-top: -0.2em;
+    font-weight: 500;
+    text-shadow: rgba(255, 255, 255, 0.25) 0 0 10px;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+}
+
+.feature {
+    flex-grow: 1;
+    width: 400px;
+    aspect-ratio: 1/1;
+    background-color: rgb(23, 23, 23);
+    border: rgb(100, 100, 100) solid 1px;
+    border-radius: 10px;
+    margin-top: -3em;
+
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+    
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out, scale 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature.in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.features :nth-child(2n) {
+    translate: 55% 0;
+}
+
+.features :nth-child(2n+1) {
+    translate: -55% 0;
+}
+
+.feature:hover {
+    box-shadow: rgb(128, 128, 128) 0 0 10px;
+    scale: 1.05;
+}
+
+.featuresLine {
+    align-self: center;
+    position: absolute;
+    margin-top: 3em;
+    height: 75em;
+    border: rgb(100, 100, 100) solid 1px;
 }
