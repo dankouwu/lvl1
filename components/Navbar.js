@@ -1,0 +1,36 @@
+class Navbar extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML =
+        `
+        <nav class="navigation">
+            <a href="./index.html" class="logo">
+                <app-logo class="logoIcon"></app-logo>
+            </a>
+
+            <ul class="linkNav">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./manage.html">Manage</a></li>
+                <li><a href="./stats.html">Statistics</a></li>
+            </ul>
+
+            <button class="menu" onclick="toggleMenu()">
+                <svg class="menuIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="6" cy="6" r="1.5" />
+                    <circle cx="12" cy="6" r="1.5" />
+                    <circle cx="18" cy="6" r="1.5" />
+
+                    <circle cx="6" cy="12" r="1.5" />
+                    <circle cx="12" cy="12" r="1.5" />
+                    <circle cx="18" cy="12" r="1.5" />
+
+                    <circle cx="6" cy="18" r="1.5" />
+                    <circle cx="12" cy="18" r="1.5" />
+                    <circle cx="18" cy="18" r="1.5" />
+                </svg>
+            </button>
+        </nav>
+        `;
+    }
+}
+
+customElements.define('app-navbar', Navbar);
