@@ -19,16 +19,16 @@
       "description": "Experience the joy of completing tasks with our engaging gamification system."
     },
     {
+      "id": "streaks",
+      "icon": "flame",
+      "title": "Streaks",
+      "description": "Track your streaks and watch your character grow."
+    },
+    {
       "id": "analytics",
       "icon": "chart-line",
       "title": "Analytics",
       "description": "Track your progress and analyze your habit patterns with detailed analytics."
-    },
-    {
-      "id": "settings",
-      "icon": "settings",
-      "title": "System Settings",
-      "description": "Customize your experience with our flexible system settings."
     },
     {
         "id": "privacy",
@@ -43,10 +43,10 @@
         "description": "This project is open source. You can view the source code on GitHub."
     },
     {
-      "id": "streaks",
-      "icon": "flame",
-      "title": "Streaks",
-      "description": "Track your streaks and watch your character grow."
+      "id": "settings",
+      "icon": "settings",
+      "title": "System Settings",
+      "description": "Customize your experience with our flexible system settings."
     }
   ]
 }
