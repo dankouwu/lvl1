@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
 
     <script src="./components/Logo.js" defer></script>
     <script src="./js/AnimatedBackground.js" defer></script>
@@ -15,9 +16,7 @@
     <script src="./js/CreateFeatures.js" defer></script>
     <script src="./js/ScrollAnimation.js" defer></script>
     <script src="./js/ScrollIntoView.js" defer></script>
-    <script src="./js/NavbarSlide.js" defer></script>
-    <script src="./js/HamburgerMenuHandler.js" defer></script>
-    <script src="./components/Navbar.js" defer></script>
+    <script src="./components/Navbar/Navbar.js" defer></script>
 
 </head>
 
@@ -26,28 +25,25 @@
 
     <app-navbar></app-navbar>
 
-    <nav class="mobileNavigation">
-        <ul class="mobileLinkNav">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./manage.html">Manage</a></li>
-            <li><a href="./stats.html">Statistics</a></li>
-        </ul>
-    </nav>
-
     <main class="container">
         <div class="welcomeLanding">
             <div class="landingTitle">
                 <app-logo></app-logo>
             </div>
             <p class="landingSubtitle">an RPG Habit Tracker</p>
-            
+
             <a class="joinWrapper">
                 <span href="./manage.html" class="joinText">Join the Adventure</span>
-                <svg class="joinArrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <svg class="joinArrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-arrow-right-icon lucide-arrow-right">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                </svg>
             </a>
             <a class="featuresLink" onclick="scrollToId('features', 800, -150)">Check out our features!</a>
         </div>
-        
+
 
         <div id="features" class="features">
             <div class="featuresLine"></div>

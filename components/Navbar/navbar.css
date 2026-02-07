@@ -1,0 +1,114 @@
+app-navbar {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.menu {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menuIcon {
+    fill: white;
+    transition: transform 0.2s ease;
+}
+
+.menuIcon:hover {
+    transform: rotate(90deg);
+}
+
+.menu:hover {
+    transform: scale(1.1);
+}
+
+.linkNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+}
+
+.linkNav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.linkNav a:hover {
+    text-shadow: rgba(255, 255, 255, 0.3) 0 0 10px;
+    transform: scale(1.1);
+}
+
+.logoIcon {
+    height: 20px;
+    color: white;
+    transition: filter 0.3s ease, scale 0.3s ease;
+}
+
+.logoIcon:hover {
+    filter: drop-shadow(white 0 0 2px);
+    scale: 1.05;
+}
+
+app-logo {
+    display: inline-block;
+    vertical-align: middle;
+    aspect-ratio: 113 / 35;
+    transition: scale 0.3s ease, filter 0.3s ease;
+}
+
+.mobileNavigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    height: 100vh;
+    width: 200px;
+    background-color: rgba(23, 23, 23, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.mobileNavigation.open {
+    transform: translateX(0%);
+    box-shadow: 0 0 10px rgba(23, 23, 23, 0.85);
+}
+
+.mobileLinkNav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 50px;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+.mobileLinkNav li {
+    text-align: center;
+}
