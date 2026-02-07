@@ -1,0 +1,52 @@
+{
+  "features": [
+    {
+      "id": "quest-board",
+      "icon": "clipboard-list",
+      "title": "Quest Board",
+      "description": "Gain XP for every habit you complete and watch your character grow."
+    },
+    {
+      "id": "habit-management",
+      "icon": "square-pen",
+      "title": "Habit Management",
+      "description": "Organize and track your habits with our intuitive management system."
+    },
+    {
+      "id": "gamification",
+      "icon": "gamepad-2",
+      "title": "Gamification System",
+      "description": "Experience the joy of completing tasks with our engaging gamification system."
+    },
+    {
+      "id": "analytics",
+      "icon": "chart-line",
+      "title": "Analytics",
+      "description": "Track your progress and analyze your habit patterns with detailed analytics."
+    },
+    {
+      "id": "settings",
+      "icon": "settings",
+      "title": "System Settings",
+      "description": "Customize your experience with our flexible system settings."
+    },
+    {
+        "id": "privacy",
+        "icon": "shield-check",
+        "title": "Privacy",
+        "description": "Your data is safe with us. All data is stored locally on your device."
+    },
+    {
+        "id": "open-source",
+        "icon": "github",
+        "title": "Open Source",
+        "description": "This project is open source. You can view the source code on GitHub."
+    },
+    {
+      "id": "streaks",
+      "icon": "flame",
+      "title": "Streaks",
+      "description": "Track your streaks and watch your character grow."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+const featuresData = fetch('./json/features.json').then((response) => response.json());
+const container = document.getElementById('features');
+const featuresLine = document.querySelector('.featuresLine');
+
+featuresData.then((data) => {
+    data.features.forEach((feature) => {
+        const featureElement = document.createElement('div');
+        featureElement.classList.add('feature');
+        featureElement.id = feature.id;
+        featureElement.innerHTML = `
+            <div class="featureIcon">
+                <i data-lucide="${feature.icon}"></i>
+            </div>
+            <div class="featureTitle">
+                <p>${feature.title}</p>
+            </div>
+            <p>${feature.description}</p>
+        `;
+        container.appendChild(featureElement);
+    });
+    lucide.createIcons();
+    let lineHieght = (data.features.length-1) * 17.6;
+    featuresLine.style.height = `${lineHieght}em`;
+    window.dispatchEvent(new Event('features-created'));
+});
