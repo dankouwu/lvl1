@@ -19,6 +19,13 @@ body {
     align-items: center;
 }
 
+#canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 .navigation {
     position: sticky;
     top: 0;
@@ -59,7 +66,46 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center
+    align-items: center;
+    justify-content: center;
+}
+
+.joinWrapper {
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin-top: 2em;
+    text-align: center;
+    padding: 0.75em 1.5em;
+    background-color: rgb(120, 255, 120);
+    color: black;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
+    text-decoration: none;
+}
+
+.joinWrapper:hover {
+    width: 27%;
+    background-color: rgb(120, 255, 120, 0.8);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgb(120, 255, 120);
+}
+
+.joinWrapper svg {
+    width: 20px;
+    height: 20px;
+    color: black;
+    transition: transform 0.3s ease;
+}
+
+.joinWrapper:hover svg {
+    transform: translateX(10px);
 }
 
 .linkNav {
@@ -100,6 +146,7 @@ app-logo {
     display: inline-block;
     vertical-align: middle;
     aspect-ratio: 113 / 35;
+    transition: scale 0.3s ease, filter 0.3s ease;
 }
 
 .welcomeTitle app-logo {
@@ -113,6 +160,11 @@ app-logo {
     text-align: center;
     font-weight: 700;
     text-shadow: rgb(120, 255, 120, 0.25) 0 0 20px;
+}
+
+.welcomeTitle app-logo:hover {
+    filter: drop-shadow(rgb(120, 255, 120, 0.25) 0 0 20px);
+    scale: 1.05;
 }
 
 .welcomeTitle svg {
@@ -138,10 +190,15 @@ app-logo {
     flex-grow: 1;
     width: 400px;
     aspect-ratio: 1/1;
-    background-color: rgb(23, 23, 23);
-    border: rgb(100, 100, 100) solid 1px;
     border-radius: 10px;
-    margin-top: -3em;
+    margin-top: -10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    text-align: center;
 
     opacity: 0;
     transform: translateY(40px) scale(0.8);
@@ -154,30 +211,49 @@ app-logo {
     transform: translateY(0) scale(1);
 }
 
-.features :nth-child(2n) {
+.features > :nth-child(2n) {
     translate: 55% 0;
 }
 
-.features :nth-child(2n+1) {
+.features > :nth-child(2n+1) {
     translate: -55% 0;
 }
 
 .feature:hover {
-    box-shadow: rgb(128, 128, 128) 0 0 10px;
-    scale: 1.05;
+    scale: 1.1;
 }
 
 .featuresLine {
     align-self: center;
     position: absolute;
-    margin-top: 3em;
-    height: 75em;
-    border: rgb(100, 100, 100) solid 1px;
+    margin-top: 7em;
+    height: 70em;
+    width: 1px;
+    background-color: rgba(124, 124, 124, 0.25);
 }
 
-#canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
+.feature .featureIcon svg {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1em;
+    color: white;
+}
+
+.feature .featureTitle {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.feature .featureTitle p {
+    font-weight: 700;
+}
+
+.feature > p {
+    font-size: 0.9em;
+    opacity: 0.8;
+    line-height: 1.4;
+    margin-top: 0.5em;
 }

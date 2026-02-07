@@ -4,7 +4,7 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('in-view');
         }
-        if(!entry.isIntersecting && entry.target.classList.contains('in-view')) {
+        if (!entry.isIntersecting && entry.target.classList.contains('in-view')) {
             entry.target.classList.remove('in-view');
         }
     });
