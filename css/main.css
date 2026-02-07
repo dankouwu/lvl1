@@ -65,10 +65,9 @@ body {
 .linkNav {
     display: flex;
     flex-direction: row;
-    gap: 4em;
     justify-content: space-around;
     align-items: center;
-    width: 30%;
+    width: 20%;
     height: 100%;
 }
 
@@ -87,26 +86,46 @@ body {
 }
 
 .logoIcon {
-    width: 40px;
-    height: 40px;
-    fill: white;
+    height: 20px;
+    color: white;
+    transition: filter 0.3s ease, scale 0.3s ease;
+}
+
+.logoIcon:hover {
+    filter: drop-shadow(white 0 0 2px);
+    scale: 1.05;
+}
+
+app-logo {
+    display: inline-block;
+    vertical-align: middle;
+    aspect-ratio: 113 / 35;
+}
+
+.welcomeTitle app-logo {
+    height: 250px;
 }
 
 .welcomeTitle {
-    font-size: 10em;
+    width: 100%;
+    max-width: 1000px;
     color: rgb(120, 255, 120);
     text-align: center;
     font-weight: 700;
     text-shadow: rgb(120, 255, 120, 0.25) 0 0 20px;
 }
 
+.welcomeTitle svg {
+    filter: drop-shadow(rgb(120, 255, 120) 0 0 20px);
+}
+
 .welcomeSubtitle {
     font-size: 2em;
     color: white;
     text-align: center;
-    margin-top: -0.2em;
+    margin-top: 0.5em;
     font-weight: 500;
-    text-shadow: rgba(255, 255, 255, 0.25) 0 0 10px;
+    text-shadow: rgba(255, 255, 255, 0.5) 0 0 10px;
 }
 
 .features {
@@ -154,4 +173,11 @@ body {
     margin-top: 3em;
     height: 75em;
     border: rgb(100, 100, 100) solid 1px;
+}
+
+#canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
