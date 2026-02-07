@@ -19,6 +19,10 @@ body {
     align-items: center;
 }
 
+main {
+    flex: 1;
+}
+
 #canvas {
     position: fixed;
     top: 0;
@@ -34,10 +38,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(23, 23, 23, 0.85);
     color: white;
-
-    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 .menu {
@@ -86,7 +88,7 @@ body {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
+    transition: background-color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease, width 0.5s ease;
     text-decoration: none;
 }
 
@@ -101,11 +103,11 @@ body {
     width: 20px;
     height: 20px;
     color: black;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 
 .joinWrapper:hover svg {
-    transform: translateX(10px);
+    transform: translateX(15px);
 }
 
 .linkNav {
@@ -149,11 +151,12 @@ app-logo {
     transition: scale 0.3s ease, filter 0.3s ease;
 }
 
-.welcomeTitle app-logo {
+.landingTitle app-logo {
     height: 250px;
+    transition: scale 1.5s ease, filter 1.5s ease;
 }
 
-.welcomeTitle {
+.landingTitle {
     width: 100%;
     max-width: 1000px;
     color: rgb(120, 255, 120);
@@ -162,16 +165,16 @@ app-logo {
     text-shadow: rgb(120, 255, 120, 0.25) 0 0 20px;
 }
 
-.welcomeTitle app-logo:hover {
+.landingTitle app-logo:hover {
     filter: drop-shadow(rgb(120, 255, 120, 0.25) 0 0 20px);
     scale: 1.05;
 }
 
-.welcomeTitle svg {
+.landingTitle svg {
     filter: drop-shadow(rgb(120, 255, 120) 0 0 20px);
 }
 
-.welcomeSubtitle {
+.landingSubtitle {
     font-size: 2em;
     color: white;
     text-align: center;
@@ -184,6 +187,7 @@ app-logo {
     display: flex;
     flex-direction: column;
     margin-top: 5em;
+    margin-bottom: 5em;
 }
 
 .feature {
@@ -227,9 +231,9 @@ app-logo {
     align-self: center;
     position: absolute;
     margin-top: 7em;
-    height: 70em;
+    height: 17.6em;
     width: 1px;
-    background-color: rgba(124, 124, 124, 0.25);
+    background: linear-gradient(180deg, rgba(124, 124, 124, 0.1), rgba(255, 255, 255, 0.35));
 }
 
 .feature .featureIcon svg {
@@ -256,4 +260,67 @@ app-logo {
     opacity: 0.8;
     line-height: 1.4;
     margin-top: 0.5em;
+}
+
+footer {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+    color: white;
+    font-size: 0.9em;
+    background: linear-gradient(180deg, rgba(23, 23, 23, 0) 0%, rgba(23, 23, 23, 1) 30%);
+}
+
+.featuresLink {
+    margin-top: 0.5em;
+    font-size: 0.9em;
+    color: rgb(150, 150, 150);
+    text-decoration: none;
+    font-weight: 500;
+    transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.featuresLink:hover {
+    text-shadow: rgba(255, 255, 255, 0.3) 0 0 10px;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.mobileNavigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    height: 100vh;
+    width: 200px;
+    background-color: rgba(23, 23, 23, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.mobileNavigation.open {
+    transform: translateX(0%);
+    box-shadow: 0 0 10px rgba(23, 23, 23, 0.85);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 9999;
+    overflow: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
 }
