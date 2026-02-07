@@ -15,6 +15,8 @@ class Navbar extends HTMLElement {
             mobileNav.classList.toggle('open');
         });
 
+        // add event listener (clicking anywhere on the page to close the menu)
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 nav.style.backgroundColor = 'rgba(20, 20, 20, 0.85)';
