@@ -4,49 +4,49 @@
       "id": "quest-board",
       "icon": "clipboard-list",
       "title": "Quest Board",
-      "description": "Gain XP for every habit you complete and watch your character grow."
+      "description": "Transform your daily to-do list into an RPG quest log. Earn XP for every task you complete."
     },
     {
       "id": "habit-management",
       "icon": "square-pen",
       "title": "Habit Management",
-      "description": "Organize and track your habits with our intuitive management system."
+      "description": "Easily create, edit, and categorize your habits. Set difficulty levels to adjust rewards."
     },
     {
       "id": "gamification",
       "icon": "gamepad-2",
       "title": "Gamification System",
-      "description": "Experience the joy of completing tasks with our engaging gamification system."
+      "description": "Level up your character, unlock achievements, and turn productivity into play."
     },
     {
       "id": "streaks",
       "icon": "flame",
       "title": "Streaks",
-      "description": "Track your streaks and watch your character grow."
+      "description": "Maintain daily consistency to build powerful streaks and boost your score multipliers."
     },
     {
       "id": "analytics",
       "icon": "chart-line",
       "title": "Analytics",
-      "description": "Track your progress and analyze your habit patterns with detailed analytics."
+      "description": "Visualize your progress with detailed charts. Identify patterns to optimize your routine."
     },
     {
         "id": "privacy",
         "icon": "shield-check",
         "title": "Privacy",
-        "description": "Your data is safe with us. All data is stored locally on your device."
+        "description": "Your data is yours. Everything is stored locally on your device with no external tracking."
     },
     {
         "id": "open-source",
         "icon": "github",
         "title": "Open Source",
-        "description": "This project is open source. You can view the source code on GitHub."
+        "description": "Transparent and community-driven. Explore the codebase and contribute on GitHub."
     },
     {
       "id": "settings",
       "icon": "settings",
       "title": "System Settings",
-      "description": "Customize your experience with our flexible system settings."
+      "description": "Tailor the experience to your needs. Customize themes, notifications, and audio."
     }
   ]
 }
