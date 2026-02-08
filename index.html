@@ -17,7 +17,7 @@
     <script src="./js/ScrollAnimation.js" defer></script>
     <script src="./js/ScrollIntoView.js" defer></script>
     <script src="./components/Navbar/Navbar.js" defer></script>
-
+    <script src="./components/Footer/Footer.js" defer></script>
 </head>
 
 <body>
@@ -32,8 +32,8 @@
             </div>
             <p class="landingSubtitle">an RPG Habit Tracker</p>
 
-            <a class="joinWrapper">
-                <span href="./manage.html" class="joinText">Join the Adventure</span>
+            <a class="joinWrapper" href="./manage.html">
+                <span class="joinText">Join the Adventure</span>
                 <svg class="joinArrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-arrow-right-icon lucide-arrow-right">
@@ -49,10 +49,7 @@
             <div class="featuresLine"></div>
         </div>
     </main>
-    <footer>
-        <p>© 2026 LVL1. All rights reserved.</p>
-        <p>LVL1 is a work in progress.</p>
-    </footer>
+    <app-footer></app-footer>
 </body>
 
 </html>
