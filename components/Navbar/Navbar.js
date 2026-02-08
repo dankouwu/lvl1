@@ -8,22 +8,24 @@ class Navbar extends HTMLElement {
     init() {
         const menuBtn = this.querySelector('.menu');
         const mobileNav = this.querySelector('.mobileNavigation');
-        const nav = this.querySelector('.navigation');
+        const nav = this.querySelector('.navWrapper');
 
         menuBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             mobileNav.classList.toggle('open');
         });
 
-        // add event listener (clicking anywhere on the page to close the menu)
+        window.addEventListener('click', (e) => {
+            if (mobileNav.classList.contains('open') && !mobileNav.contains(e.target)) {
+                mobileNav.classList.remove('open');
+            }
+        });
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                nav.style.backgroundColor = 'rgba(20, 20, 20, 0.85)';
-                nav.style.backdropFilter = 'blur(10px)';
+                nav.classList.add('notTop');
             } else {
-                nav.style.backgroundColor = 'transparent';
-                nav.style.backdropFilter = 'none';
+                nav.classList.remove('notTop');
             }
         });
     }
