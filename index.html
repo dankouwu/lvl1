@@ -15,11 +15,11 @@
     <script src="./components/Logo.js" defer></script>
     <script src="./js/AnimatedBackground.js" defer></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="./js/CreateFeatures.js" defer></script>
     <script src="./js/ScrollAnimation.js" defer></script>
     <script src="./js/ScrollIntoView.js" defer></script>
     <script src="./components/Navbar/Navbar.js" defer></script>
     <script src="./components/Footer/Footer.js" defer></script>
+    <script src="./components/Features/Features.js" defer></script>
 </head>
 
 <body>
@@ -45,11 +45,7 @@
             </a>
             <a class="featuresLink" onclick="scrollToId('features', 800, -150)">Check out our features!</a>
         </div>
-
-
-        <div id="features" class="features">
-            <div class="featuresLine"></div>
-        </div>
+        <app-features></app-features>
     </main>
     <app-footer></app-footer>
 </body>

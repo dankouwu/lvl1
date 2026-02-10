@@ -1,9 +1,10 @@
-const featuresData = fetch('./json/features.json').then((response) => response.json());
-const container = document.getElementById('features');
-const featuresLine = document.querySelector('.featuresLine');
+function createFeatures() {
+    const featuresData = fetch('./json/features.json').then((response) => response.json());
+    const container = document.getElementById('features');
+    const featuresLine = document.querySelector('.featuresLine');
 
-featuresData.then((data) => {
-    data.features.forEach((feature) => {
+    featuresData.then((data) => {
+        data.features.forEach((feature) => {
         const featureElement = document.createElement('div');
         featureElement.classList.add('feature');
         featureElement.id = feature.id;
@@ -23,3 +24,14 @@ featuresData.then((data) => {
     featuresLine.style.height = `${lineHieght}em`;
     window.dispatchEvent(new Event('features-created'));
 });
+}
+
+class Features extends HTMLElement {
+    async connectedCallback() {
+        const response = await fetch('./components/Features/features.html');
+        this.innerHTML = await response.text();
+        createFeatures();
+    }
+}
+
+customElements.define('app-features', Features);
