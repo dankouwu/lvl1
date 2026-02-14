@@ -28,6 +28,10 @@ class Navbar extends HTMLElement {
                 nav.classList.remove('notTop');
             }
         });
+
+        if (window.scrollY > 50) {
+            nav.classList.add('notTop');
+        }
     }
 }
 
