@@ -47,11 +47,72 @@
             <a class="featuresLink" onclick="scrollToId('features', 800, -400)">Check out our features!</a>
         </div>
 
-        <section class="about">
+        <app-features></app-features>
 
+        <section id="how-it-works" class="how-it-works">
+            <h2>Start Your Journey</h2>
+            <ol class="guide">
+                <li>
+                    <div class="stepNumber">1</div>
+                    <div class="stepTitle">Choose Your Goals</div>
+                    <div class="stepDescription">Select the habits you want to track</div>
+                </li>
+                <li>
+                    <div class="stepNumber">2</div>
+                    <div class="stepTitle">Track Your Progress</div>
+                    <div class="stepDescription">Track your progress and earn rewards</div>
+                </li>
+                <li>
+                    <div class="stepNumber">3</div>
+                    <div class="stepTitle">Level Up</div>
+                    <div class="stepDescription">Level up and unlock new features</div>
+                </li>
+            </ol>
         </section>
 
-        <app-features></app-features>
+        <section class="tech-stack">
+            <h2>Tech Stack</h2>
+            <p>LVL1 is designed to be a simple, lightweight, and privacy-focused habit tracker. Your data lives on your
+                device and is not stored on any external servers.</p>
+            <ul>
+                <li>
+                    <div class="tech-item">
+                        <p>Vanilla JS</p>
+                        <p>No Frameworks</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="tech-item">
+                        <p>LocalStorage</p>
+                        <p>Privacy First</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="tech-item">
+                        <p>CSS3</p>
+                        <p>Design</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="tech-item">
+                        <p>HTML5</p>
+                        <p>Structure</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="tech-item">
+                        <p>Web Components</p>
+                        <p>Reusability</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="tech-item">
+                        <p>Lucide</p>
+                        <p>Icons</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
     </main>
     <app-footer></app-footer>
 </body>

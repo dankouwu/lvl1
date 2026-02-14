@@ -121,3 +121,87 @@ main {
     text-shadow: rgba(255, 255, 255, 0.5) 0 0 10px;
 }
 
+.how-it-works {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5em;
+}
+
+.how-it-works h2 {
+    font-size: 5em;
+    text-align: center;
+    color: white;
+    margin-bottom: 0.5em;
+    margin-top: 2em;
+    font-weight: 700;
+    filter: drop-shadow(rgba(255, 255, 255, 0.5) 0 0 10px);
+    transition: filter 1s ease;
+    animation: glow 5s ease-in-out infinite;
+}
+
+.how-it-works .guide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5em;
+    gap: 2em;
+}
+
+.how-it-works .guide li {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5em;
+    margin-bottom: 5em;
+    border: rgba(255, 255, 255, 0.15) 1px solid;
+    padding: 2em;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 25em;
+    aspect-ratio: 1/1;
+    transition: transform 0.5s ease, border 0.5s ease, box-shadow 0.5s ease;
+}
+
+.how-it-works .guide li:hover {
+    transform: scale(1.05);
+    border: rgba(120, 255, 120, 0.3) 1px solid;
+    box-shadow: 0 0 10px rgba(120, 255, 120, 0.15);
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
+.how-it-works .guide li .stepNumber {
+    font-size: 5em;
+    text-align: center;
+    margin-bottom: 0.3em;
+    color: rgba(120, 255, 120, 0);
+    -webkit-text-stroke: 3px rgba(255, 255, 255, 0.3);
+    font-weight: 700;
+    transition: -webkit-text-stroke 0.5s ease, color 0.5s ease, text-shadow 0.5s ease;
+}
+
+.how-it-works .guide li:hover .stepNumber {
+    -webkit-text-stroke: 0px;
+    color: rgb(120, 255, 120);
+    text-shadow: 0 0 15px rgba(120, 255, 120, 0.3);
+}
+
+.how-it-works .guide li .stepTitle {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+    color: white;
+    font-weight: 700;
+}
+
+.how-it-works .guide li .stepDescription {
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 2em;
+    color: rgb(155, 155, 155);
+    font-weight: 700;
+}

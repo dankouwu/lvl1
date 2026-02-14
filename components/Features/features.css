@@ -106,7 +106,7 @@
     transform: scale(1.05);
 }
 
-h2 {
+app-features h2 {
     font-size: 5em;
     text-align: center;
     margin-bottom: 2em;
@@ -118,7 +118,7 @@ h2 {
     animation: glow 5s ease-in-out infinite;
 }
 
-h2:hover {
+app-features h2:hover {
     filter: drop-shadow(rgba(255, 255, 255, 0.6) 0 0 15px);
 }
 
