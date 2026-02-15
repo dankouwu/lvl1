@@ -58,8 +58,9 @@ app-navbar {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 20%;
+    width: 30%;
     height: 100%;
+    gap: 0.6em;
 }
 
 .linkNav a {
