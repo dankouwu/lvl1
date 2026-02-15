@@ -28,12 +28,12 @@ async function renderHabits(data) {
         habitDescription.textContent = habit.description;
         
         if (habitButtonText) {
-            habitButtonText.textContent = 'Track Habit';
+            habitButtonText.textContent = 'View Details';
         }
 
         habitIcon.style.color = habit.color;
         if (habitButton) {
-            habitButton.style.backgroundColor = habit.color;
+            habitButton.style.backgroundColor = habit.accentColor;
         }
         habitsContainer.appendChild(fragment);
     });
@@ -55,34 +55,34 @@ window.addEventListener('click', (e) => {
         const detailsElement = document.querySelector('.habit-details');
         detailsElement.classList.remove('hidden');
         const habitName = data.habits.find((habit) => habit.id === habitId).name;
-        const habitDescription = data.habits.find((habit) => habit.id === habitId).description;
+        const habitDescription = data.habits.find((habit) => habit.id === habitId).detailed_description;
         const habitIcon = data.habits.find((habit) => habit.id === habitId).icon;
         const habitColor = data.habits.find((habit) => habit.id === habitId).color;
         const habitAccentColor = data.habits.find((habit) => habit.id === habitId).accentColor;
         const habitUnit = data.habits.find((habit) => habit.id === habitId).unit;
         const amount = data.habits.find((habit) => habit.id === habitId).amount;
         const rewards = data.habits.find((habit) => habit.id === habitId).rewards;
-        const amountString = JSON.stringify(amount);
-        const rewardsString = JSON.stringify(rewards);
 
         const habitNameElement = detailsElement.querySelector('.habit-name');
         const habitDescriptionElement = detailsElement.querySelector('.habit-description');
         const habitIconElement = detailsElement.querySelector('.habit-icon');
-        const habitColorElement = detailsElement.querySelector('.habit-color');
-        const habitAccentColorElement = detailsElement.querySelector('.habit-accent-color');
-        const habitUnitElement = detailsElement.querySelector('.habit-unit');
-        const habitAmountElement = detailsElement.querySelector('.habit-amount');
-        const habitRewardsElement = detailsElement.querySelector('.habit-rewards');
+        const habitRewardsElement = detailsElement.querySelector('.habit-rewards-list');
+        habitRewardsElement.innerHTML = '';
+
+        Object.keys(amount).forEach((key) => {
+            const li = document.createElement('li');
+            li.classList.add(`difficulty-${key}`);
+            li.innerHTML = `
+                <p class="difficulty">${key.charAt(0).toUpperCase() + key.slice(1)}</p>
+                <p class="goal">${amount[key]} <span class="unit">${habitUnit}</span></p>
+                <p class="reward">${rewards[key]} <span class="xp">XP</span></p>
+            `;
+            habitRewardsElement.appendChild(li);
+        });
 
         habitNameElement.textContent = habitName;
         habitDescriptionElement.textContent = habitDescription;
         habitIconElement.setAttribute('data-lucide', habitIcon);
-        habitColorElement.textContent = habitColor;
-        habitAccentColorElement.textContent = habitAccentColor;
-        habitUnitElement.textContent = habitUnit;
-        habitAmountElement.textContent = amountString;
-        habitRewardsElement.textContent = rewardsString;
-
     }
     lucide.createIcons();
 });

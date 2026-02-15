@@ -177,8 +177,8 @@ main {
 
 .how-it-works .guide li:nth-child(2):hover {
     transform: scale(1.05);
-    border: rgba(230, 255, 120, 0.3) 1px solid;
-    box-shadow: 0 0 10px rgba(230, 255, 120, 0.15);
+    border: rgba(255, 255, 120, 0.3) 1px solid;
+    box-shadow: 0 0 10px rgba(255, 255, 120, 0.15);
 }
 
 .how-it-works .guide li:nth-child(3):hover {
@@ -207,8 +207,8 @@ main {
 
 .how-it-works .guide li:nth-child(2):hover .stepNumber {
     -webkit-text-stroke: 0px;
-    color: rgb(230, 255, 120);
-    text-shadow: 0 0 15px rgba(230, 255, 120, 0.3);
+    color: rgb(255, 255, 120);
+    text-shadow: 0 0 15px rgba(255, 255, 120, 0.3);
 }
 
 .how-it-works .guide li:nth-child(3):hover .stepNumber {
