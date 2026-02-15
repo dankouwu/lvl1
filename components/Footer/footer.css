@@ -75,7 +75,7 @@ footer {
     text-align: center;
 }
 
-.icon {
+footer .icon {
     color: white;
     width: 1.5em;
     height: 1.5em;
@@ -83,7 +83,7 @@ footer {
     padding: 0.5em;
 }
 
-.icon:hover {
+footer .icon:hover {
     transform: scale(1.1);
     filter: drop-shadow(white 0 0 2px);
 }

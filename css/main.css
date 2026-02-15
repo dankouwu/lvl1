@@ -126,7 +126,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5em;
+    margin-bottom: 8em;
 }
 
 .how-it-works h2 {
@@ -146,7 +146,6 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5em;
     gap: 2em;
 }
 
@@ -204,4 +203,90 @@ main {
     margin-bottom: 2em;
     color: rgb(155, 155, 155);
     font-weight: 700;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5em;
+}
+
+.tech-stack h2 {
+    font-size: 5em;
+    text-align: center;
+    color: white;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+    filter: drop-shadow(rgba(255, 255, 255, 0.5) 0 0 10px);
+    animation: glow 5s ease-in-out infinite;
+}
+
+.tech-stack p {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 2em;
+    color: white;
+    font-weight: 700;
+    max-width: 60%;
+}
+
+.tech-stack ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 5em;
+    gap: 2em;
+    max-width: 6ě0%;
+}
+
+.tech-stack .tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: rgba(255, 255, 255, 0.15) 1px solid;
+    border-radius: 20px;
+    width: 15em;
+    aspect-ratio: 1/1;
+    transition: transform 0.5s ease, border 0.5s ease, box-shadow 0.5s ease;
+}
+
+.tech-stack .tech-item .title {
+    font-size: 1em;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    text-shadow: rgba(0, 0, 0, 0.75) 0 0 10px;
+}
+
+.tech-stack .tech-item .description {
+    font-size: 0.8em;
+    text-align: center;
+    margin-bottom: 0;
+    text-shadow: rgba(0, 0, 0, 0.75) 0 0 10px;
+}
+
+.tech-stack .tech-item .icon {
+    color: #575758;
+    width: 10em;
+    height: 10em;
+    position: absolute;
+    z-index: -1;
+    transition: color 0.5s ease, filter 0.5s ease;
+}
+
+.tech-stack .tech-item:hover {
+    transform: scale(1.05);
+    border: rgba(120, 255, 120, 0.3) 1px solid;
+    box-shadow: 0 0 10px rgba(120, 255, 120, 0.15);
+}
+
+.tech-stack .tech-item:hover .icon {
+    color: rgb(60, 120, 60);
+    filter: drop-shadow(rgb(60, 120, 60) 0 0 7px);
 }

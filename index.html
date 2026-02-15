@@ -21,6 +21,16 @@
     <script src="./components/Navbar/Navbar.js" defer></script>
     <script src="./components/Footer/Footer.js" defer></script>
     <script src="./components/Features/Features.js" defer></script>
+
+    <script>
+        import { createIcons, braces } from 'lucide';
+
+        createIcons({
+            icons: {
+                braces
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -77,38 +87,44 @@
             <ul>
                 <li>
                     <div class="tech-item">
-                        <p>Vanilla JS</p>
-                        <p>No Frameworks</p>
+                        <i data-lucide="braces" class="icon"></i>
+                        <p class="title">ES6+ JavaScript</p>
+                        <p class="description">Modern Syntax</p>
                     </div>
                 </li>
                 <li>
                     <div class="tech-item">
-                        <p>LocalStorage</p>
-                        <p>Privacy First</p>
+                        <i data-lucide="database" class="icon"></i>
+                        <p class="title">LocalStorage</p>
+                        <p class="description">Privacy First</p>
                     </div>
                 </li>
                 <li>
                     <div class="tech-item">
-                        <p>CSS3</p>
-                        <p>Design</p>
+                        <i data-lucide="brush" class="icon"></i>
+                        <p class="title">CSS3</p>
+                        <p class="description">Design</p>
                     </div>
                 </li>
                 <li>
                     <div class="tech-item">
-                        <p>HTML5</p>
-                        <p>Structure</p>
+                        <i data-lucide="code" class="icon"></i>
+                        <p class="title">HTML5</p>
+                        <p class="description">Structure</p>
                     </div>
                 </li>
                 <li>
                     <div class="tech-item">
-                        <p>Web Components</p>
-                        <p>Reusability</p>
+                        <i data-lucide="puzzle" class="icon"></i>
+                        <p class="title">Web Components</p>
+                        <p class="description">Reusability</p>
                     </div>
                 </li>
                 <li>
                     <div class="tech-item">
-                        <p>Lucide</p>
-                        <p>Icons</p>
+                        <i data-lucide="sparkles" class="icon"></i>
+                        <p class="title">Lucide</p>
+                        <p class="description">Icons</p>
                     </div>
                 </li>
             </ul>
