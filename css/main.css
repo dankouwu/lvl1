@@ -162,15 +162,17 @@ main {
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.1);
     width: 25em;
-    aspect-ratio: 1/1;
-    transition: transform 0.5s ease, border 0.5s ease, box-shadow 0.5s ease;
+    height: 25em;
+    transition: transform 0.5s ease, border 0.5s ease, box-shadow 0.5s ease, flex 0.5s ease;
     backdrop-filter: blur(3px);
+    flex: 1;
 }
 
 .how-it-works .guide li:hover {
     transform: scale(1.05);
     border: rgba(120, 255, 120, 0.3) 1px solid;
     box-shadow: 0 0 10px rgba(120, 255, 120, 0.15);
+    flex: 1.2;
 }
 
 .how-it-works .guide li:nth-child(2):hover {
