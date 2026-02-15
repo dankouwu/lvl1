@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started</title>
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/get-started.css" />
+    <link rel="stylesheet" href="./components/Navbar/navbar.css" />
+    <link rel="stylesheet" href="./components/Footer/footer.css" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+    <script src="./components/Logo.js" defer></script>
+    <script src="./js/AnimatedBackground.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./js/ScrollAnimation.js" defer></script>
+    <script src="./js/ScrollIntoView.js" defer></script>
+    <script src="./components/Navbar/Navbar.js" defer></script>
+    <script src="./components/Footer/Footer.js" defer></script>
+    <script src="./js/GetStartedPage.js" defer></script>
+</head>
+
+<body>
+    <app-navbar id="app-navbar"></app-navbar>
+
+    <div class="container">
+        <h1 class="page-title">Get Started</h1>
+        <p class="page-subtitle">Choose the habits you want to track and start your journey.</p>
+        <main class="habit-container">
+
+        </main>
+
+        <div class="habit-details hidden">
+            <h2 class="habit-name"></h2>
+            <p class="habit-description"></p>
+            <i class="habit-icon" data-lucide=""></i>
+            <p class="habit-color"></p>
+            <p class="habit-accent-color"></p>
+            <p class="habit-unit"></p>
+            <p class="habit-amount"></p>
+            <p class="habit-rewards"></p>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</body>
+
+<template id="habit-template">
+    <div class="habit">
+        <div class="habit-content">
+            <i class="habit-icon" data-lucide=""></i>
+            <h2 class="habit-title"></h2>
+            <p class="habit-description"></p>
+        </div>
+        <button class="habit-button">
+            <span class="button-text">Track Habit</span>
+            <span class="button-icon" data-lucide="pen"></span>
+        </button>
+    </div>
+</template>
+
+</html>

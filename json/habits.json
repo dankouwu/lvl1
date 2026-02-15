@@ -1,0 +1,118 @@
+{
+  "habits": [
+    {
+      "id": "hydration",
+      "name": "Hydration Ritual",
+      "description": "Refill your life essence.",
+      "icon": "droplet",
+      "color": "#00b4d8",
+      "accentColor": "#8ff3ff",
+      "unit": "liters",
+      "amount": {
+        "easy": 1.5,
+        "medium": 2,
+        "hard": 2.5
+      },
+      "rewards": {
+        "easy": 10,
+        "medium": 20,
+        "hard": 30
+      }
+    },
+    {
+      "id": "walking",
+      "name": "Traveler’s March",
+      "description": "Chart new paths and strengthen your endurance.",
+      "icon": "footprints",
+      "color": "#2ecc71",
+      "accentColor": "#8df5b3",
+      "unit": "steps",
+      "amount": {
+        "easy": 5000,
+        "medium": 8000,
+        "hard": 12000
+      },
+      "rewards": {
+        "easy": 15,
+        "medium": 25,
+        "hard": 40
+      }
+    },
+    {
+      "id": "strength_training",
+      "name": "Forge of Strength",
+      "description": "Temper your body like steel.",
+      "icon": "dumbbell",
+      "color": "#e74c3c",
+      "accentColor": "#ff9a94",
+      "unit": "minutes",
+      "amount": {
+        "easy": 20,
+        "medium": 40,
+        "hard": 60
+      },
+      "rewards": {
+        "easy": 20,
+        "medium": 35,
+        "hard": 50
+      }
+    },
+    {
+      "id": "meditation",
+      "name": "Mind Sanctuary",
+      "description": "Calm the storm within.",
+      "icon": "brain",
+      "color": "#9b59b6",
+      "accentColor": "#d7b3ea",
+      "unit": "minutes",
+      "amount": {
+        "easy": 5,
+        "medium": 10,
+        "hard": 20
+      },
+      "rewards": {
+        "easy": 15,
+        "medium": 30,
+        "hard": 45
+      }
+    },
+    {
+      "id": "reading",
+      "name": "Tome of Wisdom",
+      "description": "Absorb ancient knowledge.",
+      "icon": "book",
+      "color": "#f1c40f",
+      "accentColor": "#ffe680",
+      "unit": "minutes",
+      "amount": {
+        "easy": 10,
+        "medium": 25,
+        "hard": 45
+      },
+      "rewards": {
+        "easy": 10,
+        "medium": 20,
+        "hard": 35
+      }
+    },
+    {
+      "id": "sleep",
+      "name": "Sacred Rest",
+      "description": "Recover your vitality for the next quest.",
+      "icon": "bed-single",
+      "color": "#5b2cff",
+      "accentColor": "#d8b3ff",
+      "unit": "hours",
+      "amount": {
+        "easy": 6,
+        "medium": 8,
+        "hard": 10
+      },
+      "rewards": {
+        "easy": 20,
+        "medium": 30,
+        "hard": 40
+      }
+    }
+  ]
+}
