@@ -164,12 +164,25 @@ main {
     width: 25em;
     aspect-ratio: 1/1;
     transition: transform 0.5s ease, border 0.5s ease, box-shadow 0.5s ease;
+    backdrop-filter: blur(3px);
 }
 
 .how-it-works .guide li:hover {
     transform: scale(1.05);
     border: rgba(120, 255, 120, 0.3) 1px solid;
     box-shadow: 0 0 10px rgba(120, 255, 120, 0.15);
+}
+
+.how-it-works .guide li:nth-child(2):hover {
+    transform: scale(1.05);
+    border: rgba(230, 255, 120, 0.3) 1px solid;
+    box-shadow: 0 0 10px rgba(230, 255, 120, 0.15);
+}
+
+.how-it-works .guide li:nth-child(3):hover {
+    transform: scale(1.05);
+    border: rgba(255, 120, 120, 0.3) 1px solid;
+    box-shadow: 0 0 10px rgba(255, 120, 120, 0.15);
 }
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
@@ -180,13 +193,26 @@ main {
     color: rgba(120, 255, 120, 0);
     -webkit-text-stroke: 3px rgba(255, 255, 255, 0.3);
     font-weight: 700;
-    transition: -webkit-text-stroke 0.5s ease, color 0.5s ease, text-shadow 0.5s ease;
+    transition: -webkit-text-stroke 0.5s ease, color 0.5s ease, text-shadow 0.5s ease, font-size 0.5s ease;
 }
 
 .how-it-works .guide li:hover .stepNumber {
+    font-size: 6em;
     -webkit-text-stroke: 0px;
     color: rgb(120, 255, 120);
     text-shadow: 0 0 15px rgba(120, 255, 120, 0.3);
+}
+
+.how-it-works .guide li:nth-child(2):hover .stepNumber {
+    -webkit-text-stroke: 0px;
+    color: rgb(230, 255, 120);
+    text-shadow: 0 0 15px rgba(230, 255, 120, 0.3);
+}
+
+.how-it-works .guide li:nth-child(3):hover .stepNumber {
+    -webkit-text-stroke: 0px;
+    color: rgb(255, 120, 120);
+    text-shadow: 0 0 15px rgba(255, 120, 120, 0.3);
 }
 
 .how-it-works .guide li .stepTitle {
@@ -253,6 +279,7 @@ main {
     border-radius: 20px;
     width: 15em;
     aspect-ratio: 1/1;
+    backdrop-filter: blur(3px);
     transition: transform 0.5s ease, border 0.5s ease, box-shadow 0.5s ease;
 }
 
@@ -268,6 +295,7 @@ main {
     font-size: 0.8em;
     text-align: center;
     margin-bottom: 0;
+    color: #dadada;
     text-shadow: rgba(0, 0, 0, 0.75) 0 0 10px;
 }
 
