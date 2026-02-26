@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 app-navbar {
     display: flex;
     justify-content: center;
@@ -14,12 +16,14 @@ app-navbar {
     align-items: center;
     background-color: transparent;
     backdrop-filter: none;
-    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    transition: background-color 0.5s ease, backdrop-filter 0.5s ease, height 0.5s ease;
+    height: 3.5em;
 }
 
 .notTop {
     background-color: rgba(20, 20, 20, 0.85);
     backdrop-filter: blur(10px);
+    height: 4em;
 }
 
 .navigation {
