@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 app-navbar {
     display: flex;
@@ -7,6 +7,7 @@ app-navbar {
     position: sticky;
     top: 0;
     z-index: 9999;
+    font-family: 'Outfit', sans-serif;
 }
 
 .navWrapper {
@@ -107,6 +108,7 @@ app-logo {
     right: 0;
     top: 0;
     z-index: 9999;
+    font-family: 'Outfit', sans-serif;
     height: 100vh;
     width: 200px;
     background-color: rgba(23, 23, 23, 1);
