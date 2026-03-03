@@ -150,3 +150,26 @@ app-logo {
     text-shadow: rgba(255, 255, 255, 0.3) 0 0 10px;
     transform: scale(1.1);
 }
+.streak {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.1em;
+    position: absolute;
+    right: 20%;
+    top: 20%;
+}
+
+.streak-icon {
+    width: 30px;
+    height: 30px;
+    fill: url(#gradient);
+    stroke: url(#gradient);
+}
+
+.streak-count {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: white;
+}
