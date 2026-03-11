@@ -33,7 +33,11 @@ class Particle {
     }
 
     draw() {
-        ctx.fillStyle = 'rgba(120, 255, 120, 0.5)';
+        let redOffset = Math.random() * 50;
+        let greenOffset = Math.random() * 20;
+        let blueOffset = Math.random() * 50;
+
+        ctx.fillStyle = `rgba(${120 + redOffset}, ${255 - greenOffset}, ${120 + blueOffset}, 0.5)`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
