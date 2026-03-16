@@ -1,36 +1,145 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get Started</title>
 
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/quest-board.css" />
-    <link rel="stylesheet" href="./components/Navbar/navbar.css" />
-    <link rel="stylesheet" href="./components/Footer/footer.css" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Started</title>
 
-    <script src="./components/Logo.js" defer></script>
-    <script src="./js/AnimatedBackground.js" defer></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="./js/ScrollAnimation.js" defer></script>
-    <script src="./js/ScrollIntoView.js" defer></script>
-    <script src="./components/Navbar/Navbar.js" defer></script>
-    <script src="./components/Footer/Footer.js" defer></script>
-    <script src="./js/GetStartedPage.js" defer></script>
-  </head>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/quest-board.css" />
+  <link rel="stylesheet" href="./css/background.css" />
+  <link rel="stylesheet" href="./components/Navbar/navbar.css" />
+  <link rel="stylesheet" href="./components/Footer/footer.css" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 
-  <body>
-    <app-navbar id="app-navbar"></app-navbar>
+  <script src="./components/Logo.js" defer></script>
+  <script src="./js/AnimatedBackground.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="./js/ScrollAnimation.js" defer></script>
+  <script src="./js/ScrollIntoView.js" defer></script>
+  <script src="./components/Navbar/Navbar.js" defer></script>
+  <script src="./components/Footer/Footer.js" defer></script>
+  <script src="./js/GetStartedPage.js" defer></script>
+</head>
 
+<body>
+  <canvas id="canvas"></canvas>
+  <app-navbar id="app-navbar"></app-navbar>
+
+  <div class="quest-board-wrapper">
+    <div class="ambient-glow"></div>
     <div class="container">
-      <h1 class="page-title">Quest Board</h1>
-      <p class="page-subtitle">Track your progress, obtain rewards.</p>
+      <header class="board-header">
+        <h1 class="page-title">Quest Board</h1>
+        <p class="page-subtitle">Track your progress, obtain rewards.</p>
+      </header>
+
       <main class="quest-container">
-        
+        <article class="habit" id="hydration">
+          <div class="hover-glow"></div>
+          <div class="habit-content">
+            <div class="icon-wrapper">
+              <i class="habit-icon" data-lucide="droplet" style="color: #00b4d8;"></i>
+            </div>
+
+            <div class="habitText">
+              <div class="habit-header">
+                <h2 class="habit-title">Hydration Ritual</h2>
+                <span class="habit-badge easy">Easy</span>
+              </div>
+
+              <div class="progress-section">
+                <div class="progress-info">
+                  <span class="habit-xp">33 / 100</span>
+                  <span class="habit-xp-unit">XP</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-bar-fill"
+                    style="background: linear-gradient(90deg, #0077b6, #00b4d8); width: 33%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="habit" id="strength_training">
+          <div class="hover-glow"></div>
+          <div class="habit-content">
+            <div class="icon-wrapper">
+              <i class="habit-icon" data-lucide="dumbbell" style="color: #e74c3c;"></i>
+            </div>
+
+            <div class="habitText">
+              <div class="habit-header">
+                <h2 class="habit-title">Forge of Strength</h2>
+                <span class="habit-badge medium">Medium</span>
+              </div>
+
+              <div class="progress-section">
+                <div class="progress-info">
+                  <span class="habit-xp">24 / 200</span>
+                  <span class="habit-xp-unit">XP</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-bar-fill"
+                    style="background: linear-gradient(90deg, #e74c3c, #ff7d66); width: 12%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="habit" id="sleep">
+          <div class="hover-glow"></div>
+          <div class="habit-content">
+            <div class="icon-wrapper">
+              <i class="habit-icon" data-lucide="moon" style="color: #5b2cff;"></i>
+            </div>
+
+            <div class="habitText">
+              <div class="habit-header">
+                <h2 class="habit-title">Sacred Rest</h2>
+                <span class="habit-badge hard">Hard</span>
+              </div>
+
+              <div class="progress-section">
+                <div class="progress-info">
+                  <span class="habit-xp">749 / 1000</span>
+                  <span class="habit-xp-unit">XP</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-bar-fill"
+                    style="background: linear-gradient(90deg, #5b2cff, #8c7af0); width: 74.9%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        {
+        "id": "sleep",
+        "name": "Sacred Rest",
+        "description": "Recover your vitality for the next quest.",
+        "detailed_description": "Gain experience by getting enough sleep and reaching your daily goal.",
+        "icon": "moon",
+        "color": "#5b2cff",
+        "accentColor": "#8c7af0",
+        "unit": "hours",
+        "amount": {
+        "easy": 6,
+        "medium": 8,
+        "hard": 10
+        },
+        "rewards": {
+        "easy": 20,
+        "medium": 30,
+        "hard": 40
+        }
+        }
       </main>
     </div>
-    <app-footer></app-footer>
-  </body>
+  </div>
+  <app-footer></app-footer>
+</body>
+
 </html>
