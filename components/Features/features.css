@@ -6,24 +6,24 @@
 }
 
 .feature {
-    flex-grow: 1;
-    width: 400px;
-    aspect-ratio: 1/1;
+    padding: 20px;
     border-radius: 10px;
     margin-top: -10em;
     display: flex;
+    opacity: 0;
     flex-direction: column;
+    width: 400px;
     justify-content: center;
     align-items: center;
     color: white;
-    padding: 20px;
     text-align: center;
-    opacity: 0;
+    aspect-ratio: 1/1;
     transform: translateY(40px) scale(0.8);
     transition: opacity 0.3s ease-out, transform 0.3s ease-out, scale 0.3s ease, box-shadow 0.3s ease;
+    flex-grow: 1;
 }
 
-.feature.in-view {
+.feature.inView {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
@@ -50,18 +50,18 @@
 }
 
 .feature .featureIcon svg {
-    width: 100px;
-    height: 100px;
     margin-bottom: 1em;
     color: white;
+    width: 100px;
+    height: 100px;
 }
 
 .feature .featureTitle {
-    margin-top: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2em;
+    margin-top: 1em;
 }
 
 .feature .featureTitle p {
@@ -69,31 +69,31 @@
 }
 
 .feature > p {
-    font-size: 0.9em;
+    font-size: 14px;
     opacity: 0.8;
     line-height: 1.4;
     margin-top: 0.5em;
 }
 
 .featuresLink {
-    position: relative;
-    margin-top: 0.5em;
-    font-size: 0.9em;
-    color: rgb(150, 150, 150);
     text-decoration: none;
     font-weight: 500;
+    position: relative;
+    margin-top: 0.5em;
+    font-size: 14px;
+    color: rgb(150, 150, 150);
     transition: text-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .featuresLink::after {
-    position: absolute;
+    height: 1px;
     content: "";
     width: 0%;
-    height: 1px;
     background-color: rgba(200, 200, 200, 0.5);
     bottom: -2px;
     left: 0;
     transition: width 0.3s ease;
+    position: absolute;
 }
 
 .featuresLink:hover::after {
@@ -101,18 +101,18 @@
 }
 
 .featuresLink:hover {
-    text-shadow: rgba(255, 255, 255, 0.3) 0 0 10px;
     cursor: pointer;
     transform: scale(1.05);
+    text-shadow: rgba(255, 255, 255, 0.3) 0 0 10px;
 }
 
 app-features h2 {
-    font-size: 5em;
-    text-align: center;
-    margin-bottom: 2em;
     color: white;
     margin-top: 2em;
     font-weight: 700;
+    font-size: 5em;
+    text-align: center;
+    margin-bottom: 2em;
     filter: drop-shadow(rgba(255, 255, 255, 0.5) 0 0 10px);
     transition: filter 1s ease;
     animation: glow 5s ease-in-out infinite;

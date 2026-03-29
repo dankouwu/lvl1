@@ -20,8 +20,9 @@ function createFeatures() {
         container.appendChild(featureElement);
     });
     lucide.createIcons();
-    let lineHieght = (data.features.length-1) * 17.6;
-    featuresLine.style.height = `${lineHieght}em`;
+    let lineHeight = (data.features.length-1) * 17.6;
+    featuresLine.style.height = `${lineHeight}em`;
+    // https://javascript.info/dispatch-events
     window.dispatchEvent(new Event('features-created'));
 });
 }

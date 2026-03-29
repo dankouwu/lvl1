@@ -1,19 +1,19 @@
 {
   "features": [
     {
-      "id": "quest-board",
+      "id": "questBoard",
       "icon": "clipboard-list",
       "title": "Quest Board",
       "description": "Transform your daily to-do list into an RPG quest log. Earn XP for every task you complete."
     },
     {
-      "id": "habit-management",
+      "id": "habitManagement",
       "icon": "square-pen",
       "title": "Habit Management",
       "description": "Easily create, edit, and categorize your habits. Set difficulty levels to adjust rewards."
     },
     {
-      "id": "gamification",
+      "id": "gamificationSystem",
       "icon": "gamepad-2",
       "title": "Gamification System",
       "description": "Level up your character, unlock achievements, and turn productivity into play."
@@ -37,7 +37,7 @@
         "description": "Your data is yours. Everything is stored locally on your device with no external tracking."
     },
     {
-        "id": "open-source",
+        "id": "openSource",
         "icon": "github",
         "title": "Open Source",
         "description": "Transparent and community-driven. Explore the codebase and contribute on GitHub."
