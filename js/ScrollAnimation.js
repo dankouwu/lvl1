@@ -3,10 +3,10 @@ window.addEventListener('features-created', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
+                entry.target.classList.add('inView');
             }
-            if (!entry.isIntersecting && entry.target.classList.contains('in-view')) {
-                entry.target.classList.remove('in-view');
+            if (!entry.isIntersecting && entry.target.classList.contains('inView')) {
+                entry.target.classList.remove('inView');
             }
         });
     }, {

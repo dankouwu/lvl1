@@ -3,10 +3,11 @@ const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
 
 const PARTICLE_COUNT = 50;
+// const PARTICLE_COUNT = 100;
 const PARTICLE_SPEED = 0.05;
-// lower number = longer lifetime
 const PARTICLE_LIFETIME = 0.001;
 
+// todo: add mouse interaction to push particles away
 const particles = [];
 
 function resizeCanvas() {
