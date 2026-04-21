@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get Started</title>
+  <title>Quest Board - LVL1</title>
 
   <link rel="stylesheet" href="./css/reset.css" />
   <link rel="stylesheet" href="./css/quest-board.css" />
@@ -14,132 +14,92 @@
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 
   <script src="./components/Logo.js" defer></script>
+  <script src="./js/services/StorageService.js" defer></script>
+  <script src="./js/services/RPGService.js" defer></script>
+  <script src="./js/services/HabitService.js" defer></script>
+  <script src="./js/services/StatsService.js" defer></script>
   <script src="./js/AnimatedBackground.js" defer></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="./js/ScrollAnimation.js" defer></script>
   <script src="./js/ScrollIntoView.js" defer></script>
   <script src="./components/Navbar/Navbar.js" defer></script>
   <script src="./components/Footer/Footer.js" defer></script>
-  <script src="./js/GetStartedPage.js" defer></script>
+  <script src="./js/QuestBoardPage.js" defer></script>
 </head>
 
 <body>
-  <canvas id="canvas"></canvas>
-  <app-navbar id="app-navbar"></app-navbar>
+  <main class="container">
+    <canvas id="canvas"></canvas>
+    <app-navbar id="app-navbar"></app-navbar>
 
-  <div class="quest-board-wrapper">
-    <div class="ambient-glow"></div>
-    <div class="container">
-      <header class="board-header">
-        <h1 class="page-title">Quest Board</h1>
-        <p class="page-subtitle">Track your progress, obtain rewards.</p>
-      </header>
+    <header class="boardHeader">
+      <h1 class="pageTitle">Quest Board</h1>
+      <p class="pageSubtitle">Track your progress, obtain rewards.</p>
+    </header>
 
-      <main class="quest-container">
-        <article class="habit" id="hydration">
-          <div class="hover-glow"></div>
-          <div class="habit-content">
-            <div class="icon-wrapper">
-              <i class="habit-icon" data-lucide="droplet" style="color: #00b4d8;"></i>
-            </div>
+    <section class="questContainer">
+      <!-- Dynamic content will be loaded here -->
+    </section>
 
-            <div class="habitText">
-              <div class="habit-header">
-                <h2 class="habit-title">Hydration Ritual</h2>
-                <span class="habit-badge easy">Easy</span>
-              </div>
+    <section class="settingsSection">
+      <h2 class="settingsTitle">Settings & Data</h2>
+      <div class="settingsButtons">
+        <button id="exportBtn" class="settingsBtn">
+          <i data-lucide="download"></i> Export Data
+        </button>
+        <label for="importFile" class="settingsBtn">
+          <i data-lucide="upload"></i> Import Data
+          <input type="file" id="importFile" style="display: none;">
+        </label>
+        <button id="resetBtn" class="settingsBtn danger">
+          <i data-lucide="trash-2"></i> Reset Progress
+        </button>
+      </div>
+    </section>
+    <app-footer></app-footer>
+  </main>
 
-              <div class="progress-section">
-                <div class="progress-info">
-                  <span class="habit-xp">33 / 100</span>
-                  <span class="habit-xp-unit">XP</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-bar-fill"
-                    style="background: linear-gradient(90deg, #0077b6, #00b4d8); width: 33%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
+  <template id="habitCardTemplate">
+    <article class="habit">
+      <div class="hoverGlow"></div>
+      <div class="habitContent">
+        <div class="iconWrapper">
+          <i class="habitIcon" data-lucide="" style=""></i>
+        </div>
 
-        <article class="habit" id="strength_training">
-          <div class="hover-glow"></div>
-          <div class="habit-content">
-            <div class="icon-wrapper">
-              <i class="habit-icon" data-lucide="dumbbell" style="color: #e74c3c;"></i>
-            </div>
-
-            <div class="habitText">
-              <div class="habit-header">
-                <h2 class="habit-title">Forge of Strength</h2>
-                <span class="habit-badge medium">Medium</span>
-              </div>
-
-              <div class="progress-section">
-                <div class="progress-info">
-                  <span class="habit-xp">24 / 200</span>
-                  <span class="habit-xp-unit">XP</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-bar-fill"
-                    style="background: linear-gradient(90deg, #e74c3c, #ff7d66); width: 12%;"></div>
-                </div>
+        <div class="habitText">
+          <div class="habitHeader">
+            <h2 class="habitTitle"></h2>
+            <div class="badgeWrapper">
+              <span class="habitBadge"></span>
+              <div class="streakBadge">
+                <i data-lucide="flame" class="streakIcon"></i>
+                <span class="streakCount">0</span>
               </div>
             </div>
           </div>
-        </article>
 
-        <article class="habit" id="sleep">
-          <div class="hover-glow"></div>
-          <div class="habit-content">
-            <div class="icon-wrapper">
-              <i class="habit-icon" data-lucide="moon" style="color: #5b2cff;"></i>
+          <p class="habitDescription"></p>
+
+          <div class="progressSection">
+            <div class="progressInfo">
+              <span class="habitXp">0 / 0</span>
+              <span class="habitXpUnit"></span>
             </div>
-
-            <div class="habitText">
-              <div class="habit-header">
-                <h2 class="habit-title">Sacred Rest</h2>
-                <span class="habit-badge hard">Hard</span>
-              </div>
-
-              <div class="progress-section">
-                <div class="progress-info">
-                  <span class="habit-xp">749 / 1000</span>
-                  <span class="habit-xp-unit">XP</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-bar-fill"
-                    style="background: linear-gradient(90deg, #5b2cff, #8c7af0); width: 74.9%;"></div>
-                </div>
-              </div>
+            <div class="progressBar">
+              <div class="progressBarFill" style="width: 0%;"></div>
             </div>
           </div>
-        </article>
-        {
-        "id": "sleep",
-        "name": "Sacred Rest",
-        "description": "Recover your vitality for the next quest.",
-        "detailed_description": "Gain experience by getting enough sleep and reaching your daily goal.",
-        "icon": "moon",
-        "color": "#5b2cff",
-        "accentColor": "#8c7af0",
-        "unit": "hours",
-        "amount": {
-        "easy": 6,
-        "medium": 8,
-        "hard": 10
-        },
-        "rewards": {
-        "easy": 20,
-        "medium": 30,
-        "hard": 40
-        }
-        }
-      </main>
-    </div>
-  </div>
-  <app-footer></app-footer>
+
+          <div class="actionSection">
+            <input type="number" class="progressInput" placeholder="Enter value">
+            <button class="updateProgressBtn">Complete</button>
+            <button class="removeHabitBtn" aria-label="Remove habit">&times;</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </template>
 </body>
 
 </html>

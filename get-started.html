@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Started</title>
+    <title>Get Started - LVL1</title>
 
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/get-started.css" />
@@ -13,6 +13,10 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 
     <script src="./components/Logo.js" defer></script>
+    <script src="./js/services/StorageService.js" defer></script>
+    <script src="./js/services/RPGService.js" defer></script>
+    <script src="./js/services/HabitService.js" defer></script>
+    <script src="./js/services/StatsService.js" defer></script>
     <script src="./js/AnimatedBackground.js" defer></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="./js/ScrollAnimation.js" defer></script>
@@ -23,38 +27,40 @@
 </head>
 
 <body>
-    <app-navbar id="app-navbar"></app-navbar>
+    <main class="container">
+        <app-navbar id="app-navbar"></app-navbar>
 
-    <div class="container">
-        <h1 class="page-title">Get Started</h1>
-        <p class="page-subtitle">Choose the habits you want to track and start your journey.</p>
-        <main class="habit-container">
+        <h1 class="pageTitle">Get Started</h1>
+        <p class="pageSubtitle">Choose the habits you want to track and start your journey.</p>
+        
+        <section class="habitContainer">
+            <!-- Dynamic content -->
+        </section>
 
-        </main>
-
-        <div class="habit-details hidden">
-            <h2 class="habit-name"></h2>
-            <p class="habit-description"></p>
-            <i class="habit-icon" data-lucide=""></i>
-            <ul class="habit-rewards-list">
+        <div class="habitDetails hidden" role="dialog" aria-labelledby="modalTitle">
+            <button class="closeButton" aria-label="Close modal" onclick="this.parentElement.classList.add('hidden')">&times;</button>
+            <h2 id="modalTitle" class="habitName"></h2>
+            <p class="habitDescription"></p>
+            <i class="habitIcon" data-lucide=""></i>
+            <ul class="habitRewardsList">
             </ul>
         </div>
-    </div>
-    <app-footer></app-footer>
-</body>
+        <app-footer></app-footer>
+    </main>
 
-<template id="habit-template">
-    <div class="habit">
-        <div class="habit-content">
-            <i class="habit-icon" data-lucide=""></i>
-            <h2 class="habit-title"></h2>
-            <p class="habit-description"></p>
-        </div>
-        <button class="habit-button">
-            <span class="button-text">View Details</span>
-            <span class="button-icon" data-lucide="info"></span>
-        </button>
-    </div>
-</template>
+    <template id="habit-template">
+        <article class="habit">
+            <div class="habitContent">
+                <i class="habitIcon" data-lucide=""></i>
+                <h2 class="habitTitle"></h2>
+                <p class="habitDescription"></p>
+            </div>
+            <button class="habitButton">
+                <span class="buttonText">View Details</span>
+                <span class="buttonIcon" data-lucide="info"></span>
+            </button>
+        </article>
+    </template>
+</body>
 
 </html>
