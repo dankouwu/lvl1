@@ -4,120 +4,120 @@
       "id": "hydration",
       "name": "Hydration Ritual",
       "description": "Refill your life essence.",
-      "detailed_description": "Gain experience by drinking water and reaching your daily goal.",
+      "detailedDescription": "Gain experience by drinking water and reaching your daily goal.",
       "icon": "droplet",
       "color": "#00b4d8",
       "accentColor": "#8ff3ff",
       "unit": "liters",
       "amount": {
-        "easy": 1.5,
-        "medium": 2,
-        "hard": 2.5
+        "difficultyEasy": 1.5,
+        "difficultyMedium": 2,
+        "difficultyHard": 2.5
       },
       "rewards": {
-        "easy": 10,
-        "medium": 20,
-        "hard": 30
+        "difficultyEasy": 10,
+        "difficultyMedium": 20,
+        "difficultyHard": 30
       }
     },
     {
       "id": "walking",
       "name": "Traveler’s March",
       "description": "Chart new paths and strengthen your endurance.",
-      "detailed_description": "Gain experience by walking and reaching your daily goal.",
+      "detailedDescription": "Gain experience by walking and reaching your daily goal.",
       "icon": "footprints",
       "color": "#2ecc71",
       "accentColor": "#8df5b3",
       "unit": "steps",
       "amount": {
-        "easy": 5000,
-        "medium": 8000,
-        "hard": 12000
+        "difficultyEasy": 5000,
+        "difficultyMedium": 8000,
+        "difficultyHard": 12000
       },
       "rewards": {
-        "easy": 15,
-        "medium": 25,
-        "hard": 40
+        "difficultyEasy": 15,
+        "difficultyMedium": 25,
+        "difficultyHard": 40
       }
     },
     {
-      "id": "strength_training",
+      "id": "strengthTraining",
       "name": "Forge of Strength",
       "description": "Temper your body like steel.",
-      "detailed_description": "Gain experience by doing strength training and reaching your daily goal.",
+      "detailedDescription": "Gain experience by doing strength training and reaching your daily goal.",
       "icon": "dumbbell",
       "color": "#e74c3c",
       "accentColor": "#ff9a94",
       "unit": "minutes",
       "amount": {
-        "easy": 20,
-        "medium": 40,
-        "hard": 60
+        "difficultyEasy": 20,
+        "difficultyMedium": 40,
+        "difficultyHard": 60
       },
       "rewards": {
-        "easy": 20,
-        "medium": 35,
-        "hard": 50
+        "difficultyEasy": 20,
+        "difficultyMedium": 35,
+        "difficultyHard": 50
       }
     },
     {
       "id": "meditation",
       "name": "Mind Sanctuary",
       "description": "Calm the storm within.",
-      "detailed_description": "Gain experience by meditating and reaching your daily goal.",
+      "detailedDescription": "Gain experience by meditating and reaching your daily goal.",
       "icon": "brain",
       "color": "#9b59b6",
       "accentColor": "#d7b3ea",
       "unit": "minutes",
       "amount": {
-        "easy": 5,
-        "medium": 10,
-        "hard": 20
+        "difficultyEasy": 5,
+        "difficultyMedium": 10,
+        "difficultyHard": 20
       },
       "rewards": {
-        "easy": 15,
-        "medium": 30,
-        "hard": 45
+        "difficultyEasy": 15,
+        "difficultyMedium": 30,
+        "difficultyHard": 45
       }
     },
     {
       "id": "reading",
       "name": "Tome of Wisdom",
       "description": "Absorb ancient knowledge.",
-      "detailed_description": "Gain experience by reading and reaching your daily goal.",
+      "detailedDescription": "Gain experience by reading and reaching your daily goal.",
       "icon": "book",
       "color": "#f1c40f",
       "accentColor": "#ffe680",
       "unit": "minutes",
       "amount": {
-        "easy": 10,
-        "medium": 25,
-        "hard": 45
+        "difficultyEasy": 10,
+        "difficultyMedium": 25,
+        "difficultyHard": 45
       },
       "rewards": {
-        "easy": 10,
-        "medium": 20,
-        "hard": 35
+        "difficultyEasy": 10,
+        "difficultyMedium": 20,
+        "difficultyHard": 35
       }
     },
     {
       "id": "sleep",
       "name": "Sacred Rest",
       "description": "Recover your vitality for the next quest.",
-      "detailed_description": "Gain experience by getting enough sleep and reaching your daily goal.",
+      "detailedDescription": "Gain experience by getting enough sleep and reaching your daily goal.",
       "icon": "moon",
       "color": "#5b2cff",
       "accentColor": "#8c7af0",
       "unit": "hours",
       "amount": {
-        "easy": 6,
-        "medium": 8,
-        "hard": 10
+        "difficultyEasy": 6,
+        "difficultyMedium": 8,
+        "difficultyHard": 10
       },
       "rewards": {
-        "easy": 20,
-        "medium": 30,
-        "hard": 40
+        "difficultyEasy": 20,
+        "difficultyMedium": 30,
+        "difficultyHard": 40
       }
     }
   ]
