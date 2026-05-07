@@ -23,6 +23,11 @@
     background: rgba(120, 255, 120, 0.5);
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     background-color: #0f0f11;
     font-weight: 400;
@@ -78,6 +83,7 @@ main {
     gap: 8px;
     transition: background-color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease, width 0.5s ease;
     text-align: center;
+    white-space: nowrap;
 }
 
 .joinWrapper:hover {
@@ -107,6 +113,7 @@ main {
     display: flex;
     cursor: pointer;
     transition: color 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
 }
 
 .featuresLink:hover {
@@ -281,7 +288,6 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 5em;
     align-items: center;
 }
 
@@ -310,7 +316,6 @@ main {
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
-    margin-bottom: 5em;
     justify-content: center;
     flex-direction: row;
     max-width: 80em;
@@ -432,13 +437,20 @@ main {
 }
 
 @media (max-width: 1024px) {
+    .howItWorks {
+        margin-bottom: 5em;
+    }
     .howItWorks .guide {
         flex-direction: column;
-        gap: 3em;
+        gap: 2em;
     }
     .howItWorks .guide li {
         width: 100%;
         max-width: 30em;
+        margin-top: 0;
+        margin-bottom: 0;
+        height: auto;
+        min-height: 20em;
     }
     .techStack ul {
         max-width: 100%;
@@ -447,17 +459,33 @@ main {
 
 @media (max-width: 768px) {
     .howItWorks h2, .techStack h2 {
-        font-size: 3.5em;
+        font-size: 3em;
     }
     .landingTitle app-logo {
-        height: 10em;
+        height: 8em;
     }
     .landingSubtitle {
         font-size: 1.5em;
     }
     .techStack p {
-        font-size: 1.2em;
+        font-size: 1.1em;
         max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .howItWorks h2, .techStack h2 {
+        font-size: 2.25em;
+    }
+    .landingTitle app-logo {
+        height: 6em;
+    }
+    .landingSubtitle {
+        font-size: 1.25em;
+    }
+    .joinWrapper {
+        width: 100%;
+        max-width: 18em;
     }
 }
 

@@ -19,7 +19,8 @@ footer {
 }
 
 .footerWrapper {
-    width: 60%;
+    width: 90%;
+    max-width: 80em;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -50,6 +51,7 @@ footer {
     font-weight: bold;
     color: white;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .footerLinks ul li {
@@ -73,6 +75,22 @@ footer {
 .footerCopyright {
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    .footerWrapper {
+        width: 90%;
+    }
+    .footerLinks ul {
+        gap: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .footerLinks ul {
+        flex-direction: column;
+        gap: 1em;
+    }
 }
 
 footer .icon {

@@ -20,7 +20,7 @@ function createFeatures() {
         container.appendChild(featureElement);
     });
     lucide.createIcons();
-    let lineHeight = (data.features.length-1) * 17.6;
+    let lineHeight = (data.features.length-1) * 15;
     featuresLine.style.height = `${lineHeight}em`;
     // https://javascript.info/dispatch-events
     window.dispatchEvent(new Event('features-created'));

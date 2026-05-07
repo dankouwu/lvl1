@@ -38,7 +38,7 @@
     },
     {
         "id": "openSource",
-        "icon": "github",
+        "icon": "git-branch",
         "title": "Open Source",
         "description": "Transparent and community-driven. Explore the codebase and contribute on GitHub."
     },
