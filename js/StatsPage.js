@@ -58,6 +58,11 @@ async function initStats() {
     const distLabels = Object.keys(distribution);
     const distValues = Object.values(distribution);
 
+    if (distValues.length === 0) {
+        distLabels.push('No XP yet');
+        distValues.push(1);
+    }
+
     new Chart(distCtx, {
         type: 'doughnut',
         data: {
@@ -78,6 +83,19 @@ async function initStats() {
                 legend: {
                     position: 'bottom',
                     labels: { padding: 20 }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            if (distLabels[0] === 'No XP yet') return ' No data';
+                            let label = context.label || '';
+                            if (label) label += ': ';
+                            if (context.parsed !== undefined) {
+                                label += context.parsed + ' XP';
+                            }
+                            return label;
+                        }
+                    }
                 }
             },
             cutout: '70%'

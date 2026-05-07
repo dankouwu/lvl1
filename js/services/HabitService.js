@@ -38,12 +38,11 @@ class HabitService {
   removeHabit(habitId) {
     const data = this.storage.load();
     data.activeHabits = data.activeHabits.filter(h => h.id !== habitId);
-    data.history = data.history.filter(h => h.habitId !== habitId);
+    // Keep history for stats even if habit is removed
     this.storage.save(data);
   }
 
   async updateProgress(habitId, value) {
-    // todo: add better error handling here if habitId is missing
     const data = this.storage.load();
     const habit = data.activeHabits.find(h => h.id === habitId);
     if (!habit) throw new Error('Habit not found');
@@ -55,22 +54,36 @@ class HabitService {
     const targetValue = type.amount[`difficulty${difficultyKey}`];
     const baseReward = type.rewards[`difficulty${difficultyKey}`];
 
-    const xpEarned = this.rpg.calculateXp(habit, value, targetValue, baseReward);
-    
     const today = new Date().toISOString().split('T')[0];
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
     const yesterdayStr = yesterday.toISOString().split('T')[0];
 
-    let isCompleted = value >= targetValue;
+    const todayHistory = data.history.filter(h => h.habitId === habit.id && h.date === today);
+    const currentValueBefore = todayHistory.reduce((sum, h) => sum + h.value, 0);
 
-    if (isCompleted) {
-      // Old streak logic - simplified this
-      // if (habit.lastCompleted === yesterdayStr) {
-      //   habit.streak += 1;
-      // } else if (habit.lastCompleted !== today) {
-      //   habit.streak = 1;
-      // }
+    // Enforce max
+    if (currentValueBefore + value > targetValue) {
+      value = Math.max(0, targetValue - currentValueBefore);
+    }
+    
+    if (value <= 0) return { habit, xpEarned: 0, isCompleted: currentValueBefore >= targetValue };
+
+    const totalToday = currentValueBefore + value;
+    const isCompleted = totalToday >= targetValue;
+    const wasAlreadyCompleted = currentValueBefore >= targetValue;
+
+    // Calculate XP
+    let xpEarned = 0;
+    if (isCompleted && !wasAlreadyCompleted) {
+      const rawXp = this.rpg.calculateXp(habit, targetValue, targetValue, baseReward);
+      const proportion = value / targetValue;
+      xpEarned = Math.floor(rawXp * proportion);
+    } else {
+      xpEarned = this.rpg.calculateXp(habit, value, targetValue, baseReward);
+    }
+
+    if (isCompleted && !wasAlreadyCompleted) {
       if (habit.lastCompleted === yesterdayStr) {
         habit.streak++;
       } else if (habit.lastCompleted !== today) {
@@ -84,6 +97,8 @@ class HabitService {
     const historyEntry = {
       date: today,
       habitId: habitId,
+      habitName: type.name,
+      typeId: type.id,
       value: value,
       xpEarned: xpEarned,
       isCompleted: isCompleted

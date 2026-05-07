@@ -23,18 +23,40 @@ class StatsService {
 
   async getHabitDistribution() {
     const data = this.storage.load();
+    const history = data.history;
     const activeHabits = data.activeHabits;
     const response = await fetch('json/habits.json');
     const libraryData = await response.json();
     const library = libraryData.habits;
 
     const distribution = {};
-    activeHabits.forEach(habit => {
-      const type = library.find(h => h.id === habit.typeId);
-      if (type) {
-        distribution[type.name] = (distribution[type.name] || 0) + 1;
+    let accountedXp = 0;
+
+    history.forEach(entry => {
+      let name = entry.habitName;
+      
+      if (!name) {
+        // Try to find in active habits
+        const habit = activeHabits.find(h => h.id === entry.habitId);
+        if (habit) {
+          const type = library.find(t => t.id === habit.typeId);
+          if (type) name = type.name;
+        }
       }
+
+      if (!name) name = "Other / Deleted";
+
+      const xp = entry.xpEarned || 0;
+      distribution[name] = (distribution[name] || 0) + xp;
+      accountedXp += xp;
     });
+
+    // Sanity check: if totalXp is higher than history sum (due to legacy data or deletions)
+    if (data.user.totalXp > accountedXp) {
+      const diff = data.user.totalXp - accountedXp;
+      const legacyKey = "Legacy / Other";
+      distribution[legacyKey] = (distribution[legacyKey] || 0) + diff;
+    }
 
     return distribution;
   }

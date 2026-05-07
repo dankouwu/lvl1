@@ -60,7 +60,8 @@ main {
     margin-bottom: 5em;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 6em 0 2em 0;
 }
 
 .joinWrapper {
@@ -165,6 +166,8 @@ main {
     margin-top: 0.5em;
     text-shadow: rgba(255, 255, 255, 0.5) 0 0 10px;
     font-size: 2em;
+    width: 90%;
+    max-width: 40em;
 }
 
 .howItWorks {
@@ -207,12 +210,12 @@ main {
     transition: transform 0.5s ease, border 0.5s ease, box-shadow 0.5s ease, flex 0.5s ease;
     border-radius: 1.25em;
     background-color: rgba(0, 0, 0, 0.1);
-    height: 25em;
     padding: 2em;
     display: flex;
     justify-content: center;
     margin-top: 5em;
-    width: 25em;
+    width: 100%;
+    max-width: 25em;
     backdrop-filter: blur(3px);
     border: rgba(255, 255, 255, 0.15) 1px solid;
     color: white;

@@ -1,3 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     background-color: #0f0f11;
     font-family: 'Outfit', sans-serif;
@@ -13,6 +24,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: start;
+    margin-top: 5em;
+}
+
+.statsHeader {
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
 }
 
 .pageTitle {
@@ -22,6 +42,7 @@ body {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     color: white;
     font-size: 3em;
+    text-align: center;
 }
 
 .pageSubtitle {
@@ -29,15 +50,17 @@ body {
     font-weight: 400;
     margin-bottom: 1.5em;
     color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    width: 100%;
 }
 
 .statsGrid {
     gap: 1.5em;
-    width: 100%;
+    width: 92%;
     max-width: 80em;
     margin-bottom: 3em;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
 }
 
 .statsCard {
@@ -47,6 +70,8 @@ body {
     backdrop-filter: blur(3px);
     transition: transform 0.5s ease, border 0.5s ease;
     background-color: rgba(0, 0, 0, 0.1);
+    min-width: 0;
+    overflow: hidden;
 }
 
 .statsCard:hover {
@@ -65,10 +90,16 @@ body {
     height: 18em;
     position: relative;
     width: 100%;
+    max-width: 100%;
+}
+
+canvas {
+    max-width: 100%;
+    min-width: 0;
 }
 
 .summaryCards {
-    width: 100%;
+    width: 92%;
     max-width: 80em;
     margin-bottom: 2em;
     display: grid;
@@ -103,9 +134,37 @@ body {
 
 @media (max-width: 768px) {
     .pageTitle {
-        font-size: 2.5em;
+        font-size: 2.25em;
+    }
+    .pageSubtitle {
+        font-size: 1.1em;
     }
     .statsGrid {
         grid-template-columns: 1fr;
+    }
+    .summaryCards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .pageTitle {
+        font-size: 1.75em;
+    }
+    .statsCard {
+        padding: 1em;
+        width: 100%;
+    }
+    .statsGrid {
+        width: 92%;
+        gap: 1em;
+    }
+    .summaryCards {
+        grid-template-columns: 1fr;
+        width: 92%;
+        gap: 0.75em;
+    }
+    .chartContainer {
+        height: 12em;
     }
 }

@@ -45,6 +45,9 @@ async function renderQuestBoard() {
         const todayHistory = data.history.filter(h => h.habitId === habit.id && h.date === today);
         const currentValue = todayHistory.reduce((sum, h) => sum + h.value, 0);
         
+        const remaining = Math.max(0, targetValue - currentValue);
+        const isCompleted = currentValue >= targetValue;
+
         xpText.textContent = `${currentValue} / ${targetValue}`;
         xpUnit.textContent = type.unit;
         
@@ -54,17 +57,33 @@ async function renderQuestBoard() {
 
         streakCount.textContent = habit.streak;
 
-        updateBtn.onclick = async () => {
-            const val = parseFloat(input.value);
-            if (isNaN(val) || val <= 0) return;
+        if (isCompleted) {
+            input.disabled = true;
+            updateBtn.disabled = true;
+            updateBtn.textContent = 'Done';
+            input.value = '';
+        } else {
+            updateBtn.textContent = 'Log';
+            input.max = remaining;
+            input.placeholder = `Max ${remaining}`;
             
-            await habitService.updateProgress(habit.id, val);
-            renderQuestBoard();
-            const navbar = document.querySelector('app-navbar');
-            if (navbar && navbar.updateStats) {
-                navbar.updateStats();
-            }
-        };
+            updateBtn.onclick = async () => {
+                const val = parseFloat(input.value);
+                if (isNaN(val) || val <= 0) return;
+                
+                if (val > remaining) {
+                    alert(`Maximum allowed value is ${remaining}`);
+                    return;
+                }
+                
+                await habitService.updateProgress(habit.id, val);
+                renderQuestBoard();
+                const navbar = document.querySelector('app-navbar');
+                if (navbar && navbar.updateStats) {
+                    navbar.updateStats();
+                }
+            };
+        }
 
         removeBtn.onclick = () => {
             if (confirm(`Are you sure you want to remove ${type.name}?`)) {

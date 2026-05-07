@@ -8,7 +8,7 @@
 .feature {
     padding: 20px;
     border-radius: 10px;
-    margin-top: -5em;
+    margin-top: -10em;
     display: flex;
     opacity: 0;
     flex-direction: column;
@@ -23,21 +23,17 @@
     flex-grow: 1;
 }
 
-.feature:first-of-type {
-    margin-top: 0;
-}
-
 .feature.inView {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
 
 .features > :nth-child(2n) {
-    translate: 10% 0;
+    translate: 55% 0;
 }
 
 .features > :nth-child(2n+1) {
-    translate: -10% 0;
+    translate: -55% 0;
 }
 
 .feature:hover {
@@ -45,16 +41,24 @@
 }
 
 .featuresLine {
-    display: none;
+    align-self: center;
+    position: absolute;
+    margin-top: 7em;
+    height: 17.6em;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(124, 124, 124, 0.1), rgba(255, 255, 255, 0.35));
 }
-...
+
 @media (max-width: 1024px) {
+    .featuresLine {
+        display: none;
+    }
     .features > :nth-child(2n),
     .features > :nth-child(2n+1) {
         translate: 0 0;
     }
     .feature {
-        margin-top: 2em;
+        margin-top: 4px;
         width: 100%;
         max-width: 25em;
         align-self: center;
